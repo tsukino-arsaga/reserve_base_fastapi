@@ -23,6 +23,9 @@ if page == 'users':
             url,
             data=json.dumps(data)
         )
+        if res.status_code == 200:
+            st.success('ユーザー登録完了')
+            # ここら辺まだ修正いる
         st.json(res.json())
 elif page == 'rooms':
     st.title('APIテスト画面（会議室）')
